@@ -2,7 +2,7 @@
   "name": "my1stproject",
   "version": "1.0.0",
   "description": "my first project Node.JS",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "open": "echo \"Olá mundo!\" && exit 1"
