@@ -12,5 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1"
+  },
+  "devDependencies": {
+    "log-symbols": "^7.0.1"
   }
 }
