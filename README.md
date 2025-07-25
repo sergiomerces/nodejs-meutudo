@@ -142,3 +142,53 @@ async function connectToDatabase(dataName) {
 export default connectToDatabase;
 
 ```
+
+### NPM - Node Package Manager
+
+Pacotes são bibliotecas, trechos de códigos, que possuem uma função específica que ajudam a desenvolver uma aplicação sem sair do zero.
+
+Dependências são os arquivos auxiliares que são baixados com os pacotes.
+
+Dev-Dependency é uma dependência que só tem relevância para o ambiente de de desenvolvimento e não para o deploy.
+
+O NPM é o gerenciador de dependências, a partir dele podemos instalar, executar e desinstalar essas bibliotecas.
+
+O site do projeto https://www.npmjs.com contém as informações de todos os pacotes e de como utilizá-los.
+
+Para instalar um  pacote basta digitar no terminal:
+
+```$ npm i nome-do-pacote```
+
+Quando a dependência é instalada ela é relacionada no manifesto do projeto, no arquivo package.json.
+
+Os pacotes são intalados dentro do diretório **node_modules**. Esse diretório não precisa ser carregado no deploy e deve ser declarada no arquivo **.gitignore** que tem por função informar todos objetos que não serão carregados no ambiente de produção.
+
+```
+node_modules/
+```
+
+### Restore
+Depois de clonar um projeto Node.JS é possível restaurar os pacotes das dependências listadas no arquivo coração usando o comando.
+
+```
+$ npm i
+$ npm install
+```
+### Dev-Dependency
+São pacotes com funções que por vezes só tem sentido no contexto do ambiente de desenvolvimento e não queremos que ela seja relacionada no deploy. Para isso usamos a flag **-D** ao fim da linha de comando de instalação do pacote.
+
+```
+$ npm i log-symbols
+```
+
+### Desinstalar um pacote
+Para remover um pacote nunca delete diretamente as dependências pelo diretório **node_module**, liste co comando **fund** para listar a origem do pacote:
+
+```
+$ npm fund
+```
+Depois use o comando:
+
+```
+$ npm uninstall
+```
