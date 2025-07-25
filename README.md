@@ -237,3 +237,61 @@ O painel será mostrado na parte debaixo do explorador, daí é só clicar no bo
 "prebuild": "npm install",
 "start:dev": "node src/index.js",
 "start-watch": "node --watch src/index.js"
+```
+
+## Manipulando variáveis de ambiente
+São variáveis especiais que ficam em um arquivo indepente para guardar dados sensíveis como senhas, tokens, chaves API e números de configuração.
+
+As variáveis de ambiente são guardadas num arquivo **.env**; esse arquivo será declarado junto com o diretório de pacotes **node_modules** no arquivo **.gitignore** para que não sejam publicados no ambiente de produção.
+
+### Editando um arquivo .env
+USERDATABASE="naruto"
+PASSWORDDATABASE="uzumaki"
+
+Arquivo .env
+```
+#variáveis de ambiente 
+
+USERDATABASE='seya'
+PASSWORDDATABASE='pegasus'
+```
+
+Arquivo data.js
+```
+async function connectToDatabase(user, password) {
+    if(
+      user === process.env.USERDATABASE 
+      && password === process.env.PASSWORDDATABASE
+      ) {
+        console.log('Conectando ao banco de dados...');
+    } else {
+        console.log('Falha de login! Não foi possível conectar ao banco de dados!');
+    }
+}
+
+export default connectToDatabase;
+```
+
+Arquivo index.js
+```
+import connectToDatabase from "./database/data.js";
+
+async function main() {
+    connectToDatabase(
+        process.env.USERDATABASE,
+        process.env.PASSWORDDATABASE
+    );
+}
+
+await console.log(process.env.USERDATABASE);
+
+main();
+```
+O script de execução deve referenciar a variável de ambiente:
+
+```
+"start:dev": "node --env-file=.env --watch src/index.js"
+
+Em versões anteriores a 20 do Node o arquivo .env não é lido de forma automática, é preciso instalar o pacote **dotenv**.
+
+O método process seguido da declaração de variável de ambiente permite acessar de forma segura e privada os dados de login da aplicação de exemplo.
