@@ -1,0 +1,4 @@
+//arquivos que não serão carregados no deploy
+
+node_modules/
+.env
