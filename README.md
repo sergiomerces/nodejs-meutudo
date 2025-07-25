@@ -68,7 +68,7 @@ A maioria dos comandos de lógica de programação são os mesmos Javascript.
 
 ```console.log(`Meu nome é ${userName}`); ```
 
-### 8. Modularização
+## Modularização
 
 * o código vai se tornando mais complexo
 * mais difícil de dar manutenção
@@ -110,7 +110,7 @@ module.exports = getFullName;
 
 ```
 
-#### ESM (ECMA Script Module)
+### ESM (ECMA Script Module)
 Os módulos ESM introduzem uma sintaxe unificada com a s palavras-chave **import** e **export** alinhada com padrões de outras linguagens modernas.
 
 Características:
@@ -143,7 +143,7 @@ export default connectToDatabase;
 
 ```
 
-### NPM - Node Package Manager
+## NPM - Node Package Manager
 
 Pacotes são bibliotecas, trechos de códigos, que possuem uma função específica que ajudam a desenvolver uma aplicação sem sair do zero.
 
@@ -192,3 +192,48 @@ Depois use o comando:
 ```
 $ npm uninstall
 ```
+### Atualizar dependências
+Para atualizar dependências de um projeto usamos o comando:
+
+```
+$ npm update nome-do-pacote
+```
+
+## NPM Scripts
+
+NPM Scripts são linhas de comando que funcionam como atalhos para tarefas de execução ou testes no ambiente de desenvolvimento.
+É definida com chave e valor detro do arquivo **package.json**.
+
+```
+"scripts": {
+    "test": "echo \"Hello world\" && exit 1",
+    "start": "node ./src/index.js"
+  }
+```
+### Executando NPM scripts
+
+Podemos executar através da linha de comando do termninal:
+
+```
+$ npm run test
+$ npm run start
+```
+Outra forma é pousar o mouse sobre a chave do script e clicar sobre a opção de execução **Executar Script**.
+O VS-Code abre uma nova instância para execução.
+
+O método mais rápido é ativar o painel **Scripts NPM**, indo nos três pontos ao lado do título do Explorador de arquivos e escolher a respectiva opção.
+O painel será mostrado na parte debaixo do explorador, daí é só clicar no botão de execução do script.
+
+### Automatizando a execução de projetos Node.JS
+
+```
+"start": "node src/index.js"
+"iniciar": "node src/index.js && mkdir dist"
+```
+
+### Scripts comuns
+
+```
+"prebuild": "npm install",
+"start:dev": "node src/index.js",
+"start-watch": "node --watch src/index.js"
