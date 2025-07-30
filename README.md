@@ -295,3 +295,10 @@ O script de execução deve referenciar a variável de ambiente:
 Em versões anteriores a 20 do Node o arquivo .env não é lido de forma automática, é preciso instalar o pacote **dotenv**.
 
 O método process seguido da declaração de variável de ambiente permite acessar de forma segura e privada os dados de login da aplicação de exemplo.
+
+## Typescript
+
+O Typescript é um superset do Javascript que incrementa funcionalidades.
+
+* Sintaxe para tipo de dados
+* Linguagem de programação fortemente tipada
