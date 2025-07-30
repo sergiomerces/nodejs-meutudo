@@ -291,6 +291,7 @@ O script de execução deve referenciar a variável de ambiente:
 
 ```
 "start:dev": "node --env-file=.env --watch src/index.js"
+```
 
 Em versões anteriores a 20 do Node o arquivo .env não é lido de forma automática, é preciso instalar o pacote **dotenv**.
 
@@ -298,7 +299,16 @@ O método process seguido da declaração de variável de ambiente permite acess
 
 ## Typescript
 
+Documentação no link https://www.typescriptlang.org
+
+
+![Typescript](./typescript.png)
+
 O Typescript é um superset do Javascript que incrementa funcionalidades.
 
 * Sintaxe para tipo de dados
 * Linguagem de programação fortemente tipada
+
+O Typescript é transpilado (convertido) em Javascript podendo ser executado em qualquer ambiente que rode Javascript; browser, Node.JS ou Deno.
+
+A tipagem de dados do Typescript melhora a integração com o editor de código permitindo identificar e tratar mais facilmente erros em tempo de compilação ( error compile time) e erros em tempo de execução (error runtime).
