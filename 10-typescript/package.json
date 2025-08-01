@@ -5,14 +5,17 @@
   "type": "module",
   "scripts": {
     "prebuild": "npm install",
-    "dist": "npx tsc src/index.ts",
-    "start:dev": "npm run dist && node src/index.js"
+    "dist": "npx tsc",
+    "start:dev": "tsx src/index.ts",
+    "start:dev:watch": "tsx --watch src/index.ts",
+    "start:dist": "npm run dist && node dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }
