@@ -1,1 +1,3 @@
-console.log("hello world");
+import { getBaseEmail } from './services/email';
+
+getBaseEmail('João');
