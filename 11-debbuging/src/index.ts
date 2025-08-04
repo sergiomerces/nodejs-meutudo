@@ -1,3 +1,10 @@
 import { getBaseEmail } from './services/email';
 
-getBaseEmail('João');
+async function main() {
+    getBaseEmail('João');
+
+console.log('finalizado');
+console.log('...');
+}
+
+main();
