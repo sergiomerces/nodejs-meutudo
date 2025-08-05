@@ -434,7 +434,7 @@ Para que todos arquivos .ts do projeto sejam transpilados podemos como script da
 "dist": "npx tsc"
 ```
 
-### Executando atquivos .ts nativamente
+### Executando arquivos .ts nativamente
 
 O pacote **tsx** permite que o Node.JS execute nativamente arquivos Typescript sem a necessidade de ficar fazendo a tradução manual de cada arquivo.
 
@@ -472,7 +472,7 @@ O script dist fica:
 ```
 $ npm init -y
 $ mkdir src
-$ "console.log('hello world')" > src/index.ts
+$ echo "console.log('hello world')" > src/index.ts
 $ npm i typescript tsx tsup -D
 $ npx tsc --init
 ```
@@ -486,3 +486,47 @@ Podemos usar um único comando como demonstrado a seguir para executar as tarefa
 ```
 $ npm init -y typescript - D
 ```
+
+## Debbuging com Node.js
+
+Debbugar ou depurar é o processo de encontrar erros (bugs) no código, que podem impedir o programa de ser executado ou produzir resultados inesperados.
+Para depurar o código seguimos os seguintes passos:
+
+1. coletar informações sobre o erro
+2. isolar o erro
+3. identificar o erro
+4. determinar como corrigir o erro
+5. aplicar correções
+
+Ao depurar o código fazemos que o mesmo seja executado linha a linha ou podemos fazer a execução para em ponto específicos quando quisermos inspecionar uma variável.
+Para criarmos um ponto de parada (breakpoint) é só clicar à esquerda do número da linha sobre a bolinha vermelha.
+
+No Visual Studio Code ao passarmos o ponteiro do mouse sobre o painel Scripts NPM ou sobre a opção Script do arquivo no arquivo package.json temos a opção **Depurar Script**; ao clicar o editor abre o terminal de depuração.
+
+Ao dar play (F5) o código executa até o próximo breakpoint, isso permite inspecionar variáveis como também monitorar parâmetros das funções.
+
+Para inspecionar uma variável basta cobre o sinal de mais (+) e digitar o nome da variável que será monitorada pelo painel watch (inspeção).
+
+### Controle remoto do depurador
+
+F5 - continuar, vai executar o código até o breakpoint seguinte
+
+F10 - contornar - vai diretamente para o breakpoint final
+
+F11 - intervir - segue para a próxima linha
+
+Shift + F11 - sair
+
+Ctrl + Shift + F5 - reiniciar depuração
+
+Shift + F5 - desconectar
+
+### Configurando a depuração com launch.json
+
+O Visual Studio Code pode depurar aplicações de formas diferentes, para padronizar o método para projetos desenvolvidos pela mesma equipe, devemos clicar no menu esquerdo (Executar e Depurar).
+
+Então surgirá um link para a criação do arquivo launch.json, cliqe no link, escolha a opção Node.js. O editor criará a pasta **.vscode** carregada com o arquivo launch.json.
+
+Podemos apagar todo objeto e manter apenas configurações, depois clicar no botão que aparece à diretita de Adiciona Configuração.
+
+Escolher a opção Attach to process ou Anexar ao processo; por fim no botão de depuração no mesnu esquerdo, clicar na alça de execução do script e teremos todos os scripts definidos no arquivo coração (package.json).
