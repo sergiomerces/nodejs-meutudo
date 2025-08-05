@@ -1,7 +1,7 @@
 import { getBaseEmail } from './services/email';
 
 async function main() {
-    getBaseEmail('João');
+    getBaseEmail('Sérgio');
 
 console.log('finalizado');
 console.log('...');
